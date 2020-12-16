@@ -6,14 +6,40 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve('dist'),
-        filename: 'main.js'
+        filename: 'App.js'
     },
-
-    // Babel 
+    //Tell webpack to open server in browser 
+    devServer: {
+        open: true
+    },
     module: {
         rules: [
-            { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ }
-        ]
-    }
-
+            //Babel
+            {
+                test: /\.jsx?$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/
+            },
+            // url-loader ( https://www.npmjs.com/package/url-loader )
+            {
+                test: /\.(png|jpg|jpeg|gif)$/i,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8192,
+                        },
+                    },
+                ],
+            },
+            // CSS loader          
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
+            }
+        ],
+    },
 };

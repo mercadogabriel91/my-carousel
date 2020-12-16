@@ -1,13 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
+import Carousel from './carousel/Carousel'
 
 export default function App() {
-
-    const [state, setState] = useState("click here");
-
     return (
-        <div>
-            <h1>Hello React</h1>
-            <button onClick={() => setState("clicked")}>{state}</button>
-        </div>
+        <Carousel/>
     )
 }
