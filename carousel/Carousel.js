@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 //Stylesheet import
 import './styles/styles.css'
 
-
 //Images imports
 import reactLogo from './imgs/reactLogo.png';
 import faces from './imgs/faces.jpeg';
